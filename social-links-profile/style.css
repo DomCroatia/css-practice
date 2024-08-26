@@ -9,13 +9,13 @@
 }
 
 :root {
-  --FF: 14px "Inter";
-
   --BG-COLOR: hsl(0, 0%, 8%);
   --CARD-COLOR: hsl(0, 0%, 12%);
   --BUTTON-COLOR: hsl(0, 0%, 20%);
   --WHITE: hsl(0, 0%, 100%);
   --GREEN: hsl(75, 94%, 57%);
+
+  --FF: 14px "Inter";
 }
 
 body {
@@ -26,7 +26,6 @@ body {
   min-height: 100vh;
   font: var(--FF);
   font-size: 14px;
-  font-weight: 400;
   color: var(--WHITE);
   background-color: var(--BG-COLOR);
 }
@@ -45,18 +44,12 @@ body {
 
 .card img {
   clip-path: circle(50%);
-  object-fit: cover;
   margin-top: 20px;
 }
 
 .card h2 {
   font-size: 24px;
   font-weight: 600;
-}
-
-.card p {
-  font-size: 14px;
-  font-weight: 400;
 }
 
 .card p:first-of-type {
@@ -85,4 +78,5 @@ body {
 .button:focus {
   color: var(--CARD-COLOR);
   background-color: var(--GREEN);
+  outline: 0;
 }
