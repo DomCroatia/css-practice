@@ -35,15 +35,16 @@ body {
 }
 
 main {
-  margin-top: 5rem;
+  margin: 5rem 0;
 }
 
 .recipe {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   width: 80vh;
+  gap: 1rem;
   padding: 2rem;
+  font-family: var(--OUTFIT);
   background-color: var(--WHITE);
   border-radius: 12px;
 }
@@ -54,15 +55,16 @@ img {
 }
 
 h1 {
-  font: 2rem var(--YOUNG-SERIF);
+  font: 400 2rem var(--YOUNG-SERIF);
   color: #000;
 }
 
 p {
-  font: 500 12px var(--OUTFIT);
+  font: 400 12px var(--OUTFIT);
 }
 
 .preparation {
+  border-radius: 12px;
   background-color: var(--ROSE2);
   padding: 1rem;
 }
@@ -72,23 +74,66 @@ h3 {
   color: var(--ROSE);
 }
 
-ul {
-  list-style: inside;
-  margin-left: 5px;
+ul,
+ol {
+  padding-left: 20px;
+  gap: 10px;
 }
 
 li {
+  font-size: 12px;
   margin: 10px 0;
+  padding-left: 10px;
 }
 
-li::marker {
+.preparation ul li::marker {
   color: var(--ROSE);
 }
 
-li span {
-  font-weight: 600;
+.ingredients li::marker,
+.instructions li::marker {
+  color: var(--BROWN);
+  font-weight: 900;
 }
 
 h2 {
+  font: 500 1.5rem var(--YOUNG-SERIF);
+  color: var(--BROWN);
+}
+
+.nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+tr {
+  display: flex;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid var(--STONE-2);
+  padding-bottom: 1rem;
+}
+
+td {
+  width: 100%;
+  font-family: "Outfit";
+  font-weight: 400;
+  font-size: 16px;
+}
+
+td:first-child {
+  padding-left: 20px;
+}
+
+td:nth-child(2n) {
+  font-weight: 700;
   color: var(--BROWN);
 }
