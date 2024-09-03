@@ -41,9 +41,9 @@ main {
 .recipe {
   display: flex;
   flex-direction: column;
-  width: 80vh;
+  max-width: 600px;
   gap: 1rem;
-  padding: 2rem;
+  padding: 5%;
   font-family: var(--OUTFIT);
   background-color: var(--WHITE);
   border-radius: 12px;
@@ -136,4 +136,29 @@ td:first-child {
 td:nth-child(2n) {
   font-weight: 700;
   color: var(--BROWN);
+}
+
+@media (max-width: 600px) {
+  .recipe {
+    padding: 4%;
+  }
+}
+
+@media (max-width: 375px) {
+  main {
+    margin: 0;
+  }
+  .recipe {
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .recipe > :not(:first-child) {
+    padding: 12px;
+  }
+
+  img {
+    border-radius: 0;
+  }
 }
