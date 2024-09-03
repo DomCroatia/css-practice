@@ -27,10 +27,9 @@ body {
 }
 
 .container {
-  width: 320px;
-  height: 499px;
-  margin: 0 auto;
+  max-width: 320px;
   border-radius: 10px;
+  padding: 16px;
   background: var(--WHITE);
   box-shadow: 2px 2px 10px black;
 }
@@ -39,11 +38,10 @@ img {
   border-radius: 10px;
   height: 288px;
   width: 288px;
-  margin: 16px 16px 24px 16px;
 }
 
 .text {
-  margin: 0 16px 40px;
+  margin: 20px 0;
   padding: 0 16px;
 }
 
@@ -63,4 +61,18 @@ p {
   letter-spacing: 0.2px;
   font-weight: 500;
   margin-top: 16px;
+}
+
+@media (max-width: 380px) {
+  main {
+    width: calc(100% - 20px);
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+
+  img {
+    width: 100%;
+  }
 }
