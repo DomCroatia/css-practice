@@ -29,6 +29,7 @@ body {
 .container {
   width: 320px;
   height: 499px;
+  margin: 0 auto;
   border-radius: 10px;
   background: var(--WHITE);
   box-shadow: 2px 2px 10px black;

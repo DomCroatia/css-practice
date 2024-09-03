@@ -32,9 +32,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
   width: 24rem;
-  height: 32rem;
   background-color: var(--WHITE);
   border-radius: 15px;
   border: 1px solid black;
@@ -104,9 +103,13 @@ p {
 }
 
 @media (max-width: 400px) {
+  main {
+    width: 90%;
+  }
+
   .container {
-    width: 18rem;
-    height: 28rem;
+    width: 100%;
+    margin: 0 auto;
   }
 
   h1 {
