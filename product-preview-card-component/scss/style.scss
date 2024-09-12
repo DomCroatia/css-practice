@@ -1,0 +1,23 @@
+@use "./utils/variables" as *;
+@use "./utils/resets";
+
+body {
+  background-color: $cream;
+  font-size: $font-size;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article {
+  max-width: 48rem;
+  min-height: 24rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 2px solid black;
+}
+div {
+  border: 2px solid blue;
+}
