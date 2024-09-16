@@ -4,20 +4,59 @@
 body {
   background-color: $cream;
   font-size: $font-size;
-
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 2rem;
 }
 
 article {
-  max-width: 48rem;
-  min-height: 24rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 2px solid black;
-}
-div {
-  border: 2px solid blue;
+  display: flex;
+  overflow: hidden;
+  max-width: 40rem;
+  min-height: 20rem;
+  border-radius: 8px;
+
+  img {
+    width: 50%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    padding: 1.6rem;
+    background-color: $white;
+
+    p,
+    span {
+      font-family: $ff-montserrat, sans-serif;
+      font-weight: map-get($font-weights, "regular");
+      font-size: 1rem;
+      color: $dark-gray-blue;
+    }
+
+    p {
+      line-height: 150%;
+    }
+
+    span {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      color: $dark-blue;
+      font-family: $ff-fraunces;
+      font-weight: map-get($font-weights, "bold");
+      font-size: 2.2rem;
+      line-height: 1;
+      font-optical-sizing: auto;
+    }
+  }
 }

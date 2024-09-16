@@ -15,16 +15,50 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 2rem;
 }
 
 article {
-  max-width: 48rem;
-  min-height: 24rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 2px solid black;
+  display: flex;
+  overflow: hidden;
+  max-width: 40rem;
+  min-height: 20rem;
+  border-radius: 8px;
 }
-
-div {
-  border: 2px solid blue;
+article img {
+  width: 50%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+article div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  padding: 1.6rem;
+  background-color: #ffffff;
+}
+article div p,
+article div span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #6c7289;
+}
+article div p {
+  line-height: 150%;
+}
+article div span {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+article div h1 {
+  color: #1c232b;
+  font-family: "Fraunces";
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1;
+  font-optical-sizing: auto;
 }/*# sourceMappingURL=style.css.map */
