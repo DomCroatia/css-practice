@@ -21,44 +21,100 @@ body {
 article {
   display: flex;
   overflow: hidden;
-  max-width: 40rem;
-  min-height: 20rem;
+  max-width: 600px;
+  min-height: 450px;
   border-radius: 8px;
 }
-article img {
+article > .img-desktop {
   width: 50%;
-  height: 100%;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
 }
-article div {
+article > .img-mobile {
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: none;
+}
+article > div {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
   width: 50%;
   padding: 1.6rem;
   background-color: #ffffff;
 }
-article div p,
-article div span {
+article > div > p,
+article > div > span {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1rem;
   color: #6c7289;
 }
-article div p {
+article > div > p {
   line-height: 150%;
 }
-article div span {
+article > div > span {
   letter-spacing: 5px;
   text-transform: uppercase;
 }
-article div h1 {
+article > div h1 {
   color: #1c232b;
   font-family: "Fraunces";
   font-weight: 700;
   font-size: 2.2rem;
   line-height: 1;
   font-optical-sizing: auto;
+}
+article > div .prices {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Fraunces";
+}
+article > div .prices span:first-child {
+  color: #3c8067;
+  font-size: 2rem;
+  font-family: "Fraunces";
+  font-weight: 700;
+}
+article > div .prices span:last-child {
+  color: #6c7289;
+  text-decoration: line-through;
+}
+article > div button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #3c8067;
+  color: #ffffff;
+  font-weight: 700;
+  border: 0;
+  border-radius: 8px;
+  height: 3.4rem;
+}
+article > div button:hover {
+  background-color: #1c232b;
+}
+
+@media screen and (max-width: 600px) {
+  article {
+    flex-direction: column;
+    max-width: 400px;
+    min-height: 600px;
+  }
+  article > .img-desktop {
+    display: none;
+  }
+  article > .img-mobile {
+    height: 45%;
+    display: block;
+  }
+  article > div {
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+    height: 55%;
+  }
 }/*# sourceMappingURL=style.css.map */

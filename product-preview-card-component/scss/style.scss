@@ -14,38 +14,42 @@ body {
 article {
   display: flex;
   overflow: hidden;
-  max-width: 40rem;
-  min-height: 20rem;
+  max-width: 600px;
+  min-height: 450px;
   border-radius: 8px;
 
-  img {
+  > .img-desktop {
     width: 50%;
-    height: 100%;
     display: block;
     object-fit: cover;
   }
 
-  div {
+  > .img-mobile {
+    object-fit: cover;
+    display: none;
+  }
+
+  > div {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
     width: 50%;
     padding: 1.6rem;
     background-color: $white;
 
-    p,
-    span {
+    > p,
+    > span {
       font-family: $ff-montserrat, sans-serif;
       font-weight: map-get($font-weights, "regular");
       font-size: 1rem;
       color: $dark-gray-blue;
     }
 
-    p {
+    > p {
       line-height: 150%;
     }
 
-    span {
+    > span {
       letter-spacing: 5px;
       text-transform: uppercase;
     }
@@ -57,6 +61,66 @@ article {
       font-size: 2.2rem;
       line-height: 1;
       font-optical-sizing: auto;
+    }
+
+    .prices {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: $ff-fraunces;
+    }
+
+    .prices span:first-child {
+      color: $dark-cyan;
+      font-size: 2rem;
+      font-family: $ff-fraunces;
+      font-weight: map-get($font-weights, "bold");
+    }
+
+    .prices span:last-child {
+      color: $dark-gray-blue;
+      text-decoration: line-through;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: $dark-cyan;
+      color: $white;
+      font-weight: map-get($font-weights, "bold");
+      border: 0;
+      border-radius: 8px;
+      height: 3.4rem;
+
+      &:hover {
+        background-color: $dark-blue;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  article {
+    flex-direction: column;
+    max-width: 400px;
+    min-height: 600px;
+
+    > .img-desktop {
+      display: none;
+    }
+
+    > .img-mobile {
+      height: 45%;
+      display: block;
+    }
+
+    > div {
+      justify-content: space-between;
+      padding: 1rem;
+      width: 100%;
+      height: 55%;
     }
   }
 }
