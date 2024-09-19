@@ -1,0 +1,17 @@
+@use "./utils/variables" as *;
+@use "./utils/reset";
+@use "./utils/mixin" as *;
+
+body {
+  @include flexCenter();
+  background-color: $pale-blue;
+  font-family: $ff-hanken-grotesk;
+  min-height: 100vh;
+}
+
+main {
+  background-color: $white;
+  max-width: 720px;
+  min-height: 480px;
+  border-radius: 10px;
+}
