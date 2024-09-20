@@ -9,13 +9,12 @@
 }
 
 body {
-  background-color: #f2ebe3;
-  font-size: 14px;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 2rem;
+  background-color: #f2ebe3;
+  font-size: 14px;
+  min-height: 100vh;
 }
 
 article {
@@ -84,8 +83,8 @@ article > div .prices span:last-child {
 }
 article > div button {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   background-color: #3c8067;
   color: #ffffff;
@@ -116,5 +115,6 @@ article > div button:hover {
     padding: 1rem;
     width: 100%;
     height: 55%;
+    gap: 10px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
