@@ -7,6 +7,6 @@
 @mixin flexColumnPadding2rem {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  gap: 10px;
+  gap: 1rem;
+  padding: min(5%, 2rem);
 }

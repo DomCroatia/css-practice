@@ -38,12 +38,12 @@ main .container > * {
 main .container .left {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  gap: 10px;
+  gap: 1rem;
+  padding: min(5%, 2rem);
   align-items: center;
   text-align: center;
   border-radius: 20px;
-  background: linear-gradient(hsl(241, 81%, 54%), hsl(256, 72%, 46%));
+  background: linear-gradient(135deg, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
 main .container .left div {
   display: flex;
@@ -54,27 +54,27 @@ main .container .left div {
   height: 160px;
   border-radius: 50%;
   padding: 2.5rem;
-  background-color: linear-gradient(black, hsla(241, 72%, 46%, 0));
+  background: linear-gradient(180deg, hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
 }
 main .container .left div span {
   color: hsl(0, 0%, 100%);
   font-weight: 700;
   font-size: 4rem;
 }
-main .container .left h1,
-main .container .left div {
+main .container .left h1 {
   color: white;
 }
 main .container .left h2,
-main .container .left h3 {
+main .container .left h3,
+main .container .left div {
   font-size: 18px;
   color: hsl(241, 100%, 89%);
 }
 main .container .right {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  gap: 10px;
+  gap: 1rem;
+  padding: min(5%, 2rem);
 }
 main .container .right h2 {
   text-align: left;
@@ -85,7 +85,7 @@ main .container .right ul li {
   align-items: center;
   border-radius: 6px;
   height: 40px;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   font-weight: 700;
 }
 main .container .right ul li div {
@@ -128,4 +128,17 @@ main .container .right button {
 main .container .right button:hover {
   background-image: linear-gradient(#4e21ca, #2e2be9);
   cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  .container .left,
+  .container .right {
+    width: 100%;
+    height: 50%;
+  }
 }
