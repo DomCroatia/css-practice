@@ -23,3 +23,6 @@ $font-weights: (
   "bold": 700,
   "bolder": 800,
 );
+
+$space-s-s: clamp(0.5rem, -2.2rem + 9.6vw, 2rem);
+$space-m-s: clamp(0.75rem, -1.5rem + 8vw, 2rem);
