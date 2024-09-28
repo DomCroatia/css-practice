@@ -13,7 +13,7 @@ main {
   display: flex;
   background-color: $white;
   max-width: 660px;
-  min-height: 400px;
+  min-height: 350px;
   border-radius: 20px;
   margin-inline: 1rem;
 
@@ -60,7 +60,7 @@ main {
       h2,
       h3,
       div {
-        font-size: $fs;
+        font-size: $step-0;
         color: $light-lavender;
       }
     }
@@ -130,20 +130,25 @@ main {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media (width < 420px) {
   main {
     margin-top: 1rem;
-  }
 
-  .container {
-    display: flex;
-    flex-direction: column;
+    .container {
+      display: flex;
+      flex-direction: column;
 
-    .left,
-    .right {
-      width: 100%;
-      height: 50%;
-      padding: $space-m-s;
+      .left,
+      .right {
+        width: 100%;
+        height: 50%;
+        padding: $space-s-xs;
+
+        h2,
+        h3 {
+          font-size: 18px;
+        }
+      }
     }
   }
 }

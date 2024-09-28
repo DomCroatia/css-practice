@@ -16,7 +16,6 @@ $pale-blue: hsl(221, 100%, 96%);
 $light-lavender: hsl(241, 100%, 89%);
 $dark-gray-blue: hsl(224, 30%, 27%);
 
-$fs: 18px;
 $ff-hanken-grotesk: "Hanken Grotesk";
 $font-weights: (
   "regular": 500,
@@ -24,5 +23,6 @@ $font-weights: (
   "bolder": 800,
 );
 
-$space-s-s: clamp(0.5rem, -2.2rem + 9.6vw, 2rem);
-$space-m-s: clamp(0.75rem, -1.5rem + 8vw, 2rem);
+$step-0: clamp(0.875rem, 0.0568rem + 2.7273vw, 1.25rem);
+
+$space-s-xs: clamp(1rem, 0.5909rem + 1.4545vw, 1.5rem);
