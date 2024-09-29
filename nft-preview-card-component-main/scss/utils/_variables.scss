@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+$ff: "Outfit";
+$fs: 18px;
+$fw: (
+  "regular": 300,
+  "bold": 400,
+  "bolder": 600,
+);
+
+// Primary
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+
+//Neutral
+$white: hsl(0, 0%, 100%);
+$very-dark-blue-1: hsl(217, 54%, 11%);
+$very-dark-blue-2: hsl(216, 50%, 16%);
+$very-dark-blue-3: hsl(215, 32%, 27%);

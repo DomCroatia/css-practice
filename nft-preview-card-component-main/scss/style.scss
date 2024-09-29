@@ -1,0 +1,31 @@
+@use "./utils/variables" as *;
+@use "./utils/reset";
+@use "./utils/mixin" as *;
+
+html {
+  font-size: $fs;
+}
+
+body {
+  @include flexCenter();
+
+  min-height: 100vh;
+  background-color: $very-dark-blue-1;
+  font-family: $ff;
+}
+
+main {
+  background-color: $very-dark-blue-2;
+  padding: 1rem; //responsive!
+  margin-inline: 1rem; //responsive!
+  max-width: 300px;
+  min-height: 500px;
+  border-radius: 16px;
+
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
