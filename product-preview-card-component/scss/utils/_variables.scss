@@ -16,3 +16,10 @@ $font-weights: (
   "regular": 500,
   "bold": 700,
 );
+
+// Utopia responsiveness
+$h1-0: clamp(1.5rem, 0.2069rem + 5.1724vw, 2.25rem);
+$p-0: clamp(0.875rem, 0.6595rem + 0.8621vw, 1rem);
+$price-0: clamp(1.625rem, 0.9784rem + 2.5862vw, 2rem);
+
+$padding-s-s: clamp(1rem, -1.2845rem + 15.5172cqi, 1.625rem);

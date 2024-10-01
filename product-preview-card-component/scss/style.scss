@@ -10,6 +10,10 @@ body {
   min-height: 100vh;
 }
 
+main {
+  margin-inline: 1rem;
+}
+
 article {
   display: flex;
   overflow: hidden;
@@ -17,89 +21,115 @@ article {
   min-height: 450px;
   border-radius: 8px;
 
-  > .img-desktop {
+  .img-desktop {
     width: 50%;
     display: block;
     object-fit: cover;
   }
 
-  > .img-mobile {
+  .img-mobile {
     object-fit: cover;
     display: none;
   }
 
   > div {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    padding: 1.6rem;
-    background-color: $white;
+    flex: 1;
+    container: layout / inline-size;
 
-    > p,
-    > span {
-      font-family: $ff-montserrat, sans-serif;
-      font-weight: map-get($font-weights, "regular");
-      font-size: 1rem;
-      color: $dark-gray-blue;
-    }
-
-    > p {
-      line-height: 150%;
-    }
-
-    > span {
-      letter-spacing: 5px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      color: $dark-blue;
-      font-family: $ff-fraunces;
-      font-weight: map-get($font-weights, "bold");
-      font-size: 2.2rem;
-      line-height: 1;
-      font-optical-sizing: auto;
-    }
-
-    .prices {
+    > div {
       display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-family: $ff-fraunces;
-    }
+      flex-direction: column;
+      gap: 1.2rem;
+      width: 100%;
+      padding: 1.4rem; //responsive
+      background-color: $white;
 
-    .prices span:first-child {
-      color: $dark-cyan;
-      font-size: 2rem;
-      font-family: $ff-fraunces;
-      font-weight: map-get($font-weights, "bold");
-    }
+      p,
+      > span {
+        font-family: $ff-montserrat, sans-serif;
+        font-weight: map-get($font-weights, "regular");
+        font-size: 1rem; //responsive
+        color: $dark-gray-blue;
+      }
 
-    .prices span:last-child {
-      color: $dark-gray-blue;
-      text-decoration: line-through;
-    }
+      p {
+        line-height: 150%;
+      }
 
-    button {
-      @include flexCenter();
+      > span {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+      }
 
-      gap: 10px;
-      background-color: $dark-cyan;
-      color: $white;
-      font-weight: map-get($font-weights, "bold");
-      border: 0;
-      border-radius: 8px;
-      height: 3.4rem;
+      h1 {
+        color: $dark-blue;
+        font-family: $ff-fraunces;
+        font-weight: map-get($font-weights, "bold");
+        font-size: 36px; //responsive
+        line-height: 1;
+        font-optical-sizing: auto;
+      }
 
-      &:hover {
-        background-color: $dark-blue;
+      .prices {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: $ff-fraunces;
+
+        span:first-child {
+          color: $dark-cyan;
+          font-size: 2rem;
+          font-family: $ff-fraunces;
+          font-weight: map-get($font-weights, "bold");
+        }
+
+        span:last-child {
+          color: $dark-gray-blue;
+          text-decoration: line-through;
+        }
+      }
+
+      button {
+        @include flexCenter();
+
+        gap: 10px;
+        background-color: $dark-cyan;
+        color: $white;
+        font-weight: map-get($font-weights, "bold");
+        border: 0;
+        border-radius: 8px;
+        height: 3.4rem;
+
+        &:hover {
+          background-color: $dark-blue;
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 600px) {
+@container layout (width < 280px) {
+  .info {
+    padding: $padding-s-s;
+
+    h1 {
+      font-size: $h1-0;
+    }
+
+    p {
+      font-size: $p-0;
+    }
+
+    .prices {
+      :first-child {
+        font-size: $price-0;
+      }
+    }
+  }
+}
+
+@media (width < 420px) {
   article {
     flex-direction: column;
     max-width: 400px;
@@ -116,7 +146,6 @@ article {
 
     > div {
       justify-content: space-between;
-      padding: 1rem;
       width: 100%;
       height: 55%;
       gap: 10px;

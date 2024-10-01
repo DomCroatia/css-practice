@@ -17,6 +17,10 @@ body {
   min-height: 100vh;
 }
 
+main {
+  margin-inline: 1rem;
+}
+
 article {
   display: flex;
   overflow: hidden;
@@ -24,64 +28,69 @@ article {
   min-height: 450px;
   border-radius: 8px;
 }
-article > .img-desktop {
+article .img-desktop {
   width: 50%;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
 }
-article > .img-mobile {
+article .img-mobile {
   -o-object-fit: cover;
      object-fit: cover;
   display: none;
 }
 article > div {
   display: flex;
+  flex: 1;
+  container: layout/inline-size;
+}
+article > div > div {
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 50%;
-  padding: 1.6rem;
+  gap: 1.2rem;
+  width: 100%;
+  padding: 1.4rem;
   background-color: #ffffff;
 }
-article > div > p,
-article > div > span {
+article > div > div p,
+article > div > div > span {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1rem;
   color: #6c7289;
 }
-article > div > p {
+article > div > div p {
   line-height: 150%;
 }
-article > div > span {
+article > div > div > span {
   letter-spacing: 5px;
   text-transform: uppercase;
 }
-article > div h1 {
+article > div > div h1 {
   color: #1c232b;
   font-family: "Fraunces";
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 36px;
   line-height: 1;
   font-optical-sizing: auto;
 }
-article > div .prices {
+article > div > div .prices {
   display: flex;
   align-items: center;
   gap: 1rem;
   font-family: "Fraunces";
 }
-article > div .prices span:first-child {
+article > div > div .prices span:first-child {
   color: #3c8067;
   font-size: 2rem;
   font-family: "Fraunces";
   font-weight: 700;
 }
-article > div .prices span:last-child {
+article > div > div .prices span:last-child {
   color: #6c7289;
   text-decoration: line-through;
 }
-article > div button {
+article > div > div button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,11 +102,25 @@ article > div button {
   border-radius: 8px;
   height: 3.4rem;
 }
-article > div button:hover {
+article > div > div button:hover {
   background-color: #1c232b;
 }
 
-@media screen and (max-width: 600px) {
+@container layout (width < 280px) {
+  .info {
+    padding: clamp(1rem, -1.2845rem + 15.5172cqi, 1.625rem);
+  }
+  .info h1 {
+    font-size: clamp(1.5rem, 0.2069rem + 5.1724vw, 2.25rem);
+  }
+  .info p {
+    font-size: clamp(0.875rem, 0.6595rem + 0.8621vw, 1rem);
+  }
+  .info .prices :first-child {
+    font-size: clamp(1.625rem, 0.9784rem + 2.5862vw, 2rem);
+  }
+}
+@media (width < 420px) {
   article {
     flex-direction: column;
     max-width: 400px;
@@ -112,7 +135,6 @@ article > div button:hover {
   }
   article > div {
     justify-content: space-between;
-    padding: 1rem;
     width: 100%;
     height: 55%;
     gap: 10px;
