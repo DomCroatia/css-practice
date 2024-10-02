@@ -16,16 +16,105 @@ body {
 
 main {
   background-color: $very-dark-blue-2;
-  padding: 1rem; //responsive!
-  margin-inline: 1rem; //responsive!
+  padding: 1rem;
+  margin-inline: 1rem;
   max-width: 300px;
   min-height: 500px;
   border-radius: 16px;
 
-  img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
+  figure {
     border-radius: 8px;
+    overflow: hidden;
+    background-color: $cyan;
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      opacity: 1;
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding-block: 1rem;
+
+    :not(h2) {
+      font-size: 16px;
+    }
+
+    h2 {
+      width: fit-content;
+      font-size: inherit;
+      color: $white;
+
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+
+    p {
+      font-weight: map-get($map: $fw, $key: regular);
+      color: $soft-blue;
+    }
+
+    div:first-of-type {
+      display: flex;
+      justify-content: space-between;
+
+      .price {
+        font-weight: map-get($map: $fw, $key: bolder);
+        color: $cyan;
+      }
+
+      .time {
+        color: $soft-blue;
+        font-weight: map-get($map: $fw, $key: regular);
+      }
+
+      .price,
+      .time {
+        display: flex;
+        gap: 0.2rem;
+        img {
+          height: 20px;
+          width: 20px;
+          object-fit: contain;
+        }
+      }
+    }
+    .author {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 0.8rem;
+      border-top: 2px solid $very-dark-blue-3;
+
+      img {
+        height: 30px;
+        width: 30px;
+        object-fit: contain;
+        border: 1px solid $white;
+        border-radius: 50%;
+      }
+
+      span {
+        color: $white;
+
+        &:hover {
+          color: $cyan;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }

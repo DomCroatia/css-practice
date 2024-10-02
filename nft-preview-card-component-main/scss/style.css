@@ -28,10 +28,90 @@ main {
   min-height: 500px;
   border-radius: 16px;
 }
-main img {
+main figure {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: hsl(178, 100%, 50%);
+}
+main figure img {
   width: 100%;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 8px;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+main figure img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+main .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-block: 1rem;
+}
+main .container :not(h2) {
+  font-size: 16px;
+}
+main .container h2 {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: inherit;
+  color: hsl(0, 0%, 100%);
+}
+main .container h2:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
+}
+main .container p {
+  font-weight: 300;
+  color: hsl(215, 51%, 70%);
+}
+main .container div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+main .container div:first-of-type .price {
+  font-weight: 600;
+  color: hsl(178, 100%, 50%);
+}
+main .container div:first-of-type .time {
+  color: hsl(215, 51%, 70%);
+  font-weight: 300;
+}
+main .container div:first-of-type .price,
+main .container div:first-of-type .time {
+  display: flex;
+  gap: 0.2rem;
+}
+main .container div:first-of-type .price img,
+main .container div:first-of-type .time img {
+  height: 20px;
+  width: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .container .author {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.8rem;
+  border-top: 2px solid hsl(215, 32%, 27%);
+}
+main .container .author img {
+  height: 30px;
+  width: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+main .container .author span {
+  color: hsl(0, 0%, 100%);
+}
+main .container .author span:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
 }
