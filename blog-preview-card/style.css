@@ -23,10 +23,6 @@
   --step--1: clamp(0.9372rem, 0.6036rem + 1.6679cqi, 1.3333rem);
   --step-0: clamp(1rem, 0.5789rem + 2.1053cqi, 1.5rem);
   --step-1: clamp(1.067rem, 0.5445rem + 2.6126cqi, 1.6875rem);
-  --step-2: clamp(1.1385rem, 0.4985rem + 3.1998cqi, 1.8984rem);
-  --step-3: clamp(1.2148rem, 0.4392rem + 3.8778cqi, 2.1357rem);
-  --step-4: clamp(1.2962rem, 0.3643rem + 4.6592cqi, 2.4027rem);
-  --step-5: clamp(1.383rem, 0.2714rem + 5.5581cqi, 2.703rem);
 }
 
 body {
@@ -119,18 +115,3 @@ p {
 .container:focus {
   box-shadow: 8px 8px var(--GRAY);
 }
-
-/* @media (max-width: 400px) {
-  .container {
-    width: 90%;
-    margin-inline: auto;
-  }
-
-  h1 {
-    font: 800 var(--TP2);
-  }
-
-  p {
-    font: 500 var(--TP3);
-  }
-} */
