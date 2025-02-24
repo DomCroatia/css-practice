@@ -3,11 +3,8 @@ console.log("Hello from JS");
 fetch("./data.json")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     const summaryArr = document.querySelectorAll("li div:first-child");
-    console.log(summaryArr);
     const scoreArr = document.querySelectorAll(".score");
-    console.log(scoreArr);
 
     data.forEach((element, index) => {
       const img = summaryArr[index].querySelector("img");
