@@ -101,8 +101,13 @@ article {
         border-radius: 8px;
         height: 3.4rem;
 
+        &:focus {
+          outline: 4px solid $dark-blue;
+        }
+
         &:hover {
           background-color: $dark-blue;
+          cursor: pointer;
         }
       }
     }

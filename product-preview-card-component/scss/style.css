@@ -102,8 +102,12 @@ article > div > div button {
   border-radius: 8px;
   height: 3.4rem;
 }
+article > div > div button:focus {
+  outline: 4px solid #1c232b;
+}
 article > div > div button:hover {
   background-color: #1c232b;
+  cursor: pointer;
 }
 
 @container layout (width < 280px) {
