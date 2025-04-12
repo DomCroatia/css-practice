@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color: hsl(225, 100%, 94%);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--background-color);
+  font-family: "Red Hat Display", sans-serif;
+}
+
+/* main {
+} */
+
+article {
+  max-width: 400px;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 20px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
