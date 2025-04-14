@@ -21,18 +21,17 @@ body {
   align-items: center;
   text-align: center;
   background-image: url("./images/pattern-background-desktop.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-repeat: repeat-x;
   background-color: var(--pale-blue);
   font-family: "Red Hat Display", sans-serif;
 }
 
 main {
-  margin: 0 20px;
+  margin: 0 12px;
 }
 
 article {
-  max-width: 450px;
+  max-width: 400px;
   min-height: 600px;
   overflow: hidden;
   background-color: white;
@@ -46,7 +45,7 @@ article > img {
 }
 
 .container {
-  margin: 40px 50px;
+  margin: 20px 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -96,7 +95,7 @@ button {
 .payment {
   color: white;
   background-color: var(--bright-blue);
-  box-shadow: 0px 5px 25px -5px var(--bright-blue);
+  box-shadow: 0px 5px 30px -5px var(--bright-blue);
 }
 
 .container button:last-child {
@@ -118,4 +117,25 @@ button:hover {
 
 .plan-info a:hover {
   text-decoration: none;
+}
+
+@media screen and (max-width: 340px) {
+  main {
+    margin: 0 6px;
+  }
+
+  article {
+    min-height: 500px;
+  }
+
+  .container {
+    margin: 10px 20px;
+    gap: 10px;
+  }
+
+  .plan-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
 }
