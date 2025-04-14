@@ -7,7 +7,11 @@
 }
 
 :root {
-  --background-color: hsl(225, 100%, 94%);
+  --pale-blue: hsl(225, 100%, 94%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --bright-blue: hsl(245, 75%, 52%);
 }
 
 body {
@@ -19,22 +23,99 @@ body {
   background-image: url("./images/pattern-background-desktop.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: var(--background-color);
+  background-color: var(--pale-blue);
   font-family: "Red Hat Display", sans-serif;
 }
 
-/* main {
-} */
+main {
+  margin: 0 20px;
+}
 
 article {
-  max-width: 400px;
+  max-width: 450px;
   min-height: 600px;
   overflow: hidden;
   background-color: white;
   border-radius: 20px;
+  box-shadow: 0 20px 40px -20px;
 }
 
-img {
+article > img {
   display: block;
   width: 100%;
+}
+
+.container {
+  margin: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container h1 {
+  font-weight: 900;
+  font-size: 26px;
+}
+
+.container p {
+  color: var(--desaturated-blue);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.plan-info {
+  display: flex;
+  align-items: center;
+  background-color: hsl(225, 100%, 98%);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.plan-info img {
+  margin-right: 20px;
+}
+
+.plan-info div p:first-child {
+  color: black;
+  font-weight: 900;
+}
+
+.plan-info a {
+  margin-left: auto;
+  font-weight: 700;
+}
+
+button {
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.payment {
+  color: white;
+  background-color: var(--bright-blue);
+  box-shadow: 0px 5px 25px -5px var(--bright-blue);
+}
+
+.container button:last-child {
+  background-color: transparent;
+  color: var(--desaturated-blue);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.payment:hover {
+  background-color: var(--dark-blue);
+  box-shadow: 0px 5px 25px -5px var(--dark-blue);
+}
+.container button:last-child:hover {
+  color: black;
+}
+
+.plan-info a:hover {
+  text-decoration: none;
 }
