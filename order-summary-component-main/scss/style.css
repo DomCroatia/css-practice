@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 15px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+  background-image: url("../images/pattern-background-desktop.svg");
+  background-repeat: repeat-x;
+  background-color: hsl(225, 100%, 94%);
+}
+
+main {
+  margin: 0 12px;
+}
+
+article {
+  max-width: 400px;
+  min-height: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 20px 40px -20px;
+}
+article > img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  margin: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container h1 {
+  font-weight: 900;
+  font-size: 26px;
+}
+.container p {
+  color: hsl(224, 23%, 55%);
+  font-weight: 600;
+  line-height: 1.6;
+}
+.container button:first-of-type {
+  color: white;
+  background-color: hsl(245, 75%, 52%);
+  box-shadow: 0px 5px 30px -5px hsl(245, 75%, 52%);
+}
+.container button:first-of-type:hover {
+  background-color: hsl(223, 47%, 23%);
+  box-shadow: 0px 5px 25px -5px hsl(223, 47%, 23%);
+}
+.container button:last-of-type {
+  background-color: transparent;
+  color: hsl(224, 23%, 55%);
+}
+.container button:last-of-type:hover {
+  color: black;
+}
+
+.plan-info {
+  display: flex;
+  align-items: center;
+  background-color: hsl(225, 100%, 98%);
+  padding: 20px;
+  border-radius: 10px;
+}
+.plan-info img {
+  margin-right: 20px;
+}
+.plan-info div {
+  text-align: start;
+}
+.plan-info div p:first-child {
+  color: black;
+  font-weight: 900;
+}
+.plan-info a {
+  margin-left: auto;
+  font-weight: 700;
+}
+.plan-info a:hover {
+  text-decoration: none;
+}
