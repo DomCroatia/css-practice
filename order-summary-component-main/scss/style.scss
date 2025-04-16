@@ -82,9 +82,10 @@ article {
 
   div {
     text-align: start;
+
     p:first-child {
       color: black;
-      font-weight: 900;
+      font-weight: 700;
     }
   }
 
@@ -98,23 +99,21 @@ article {
   }
 }
 
-// @media screen and (max-width: 375px) {
-//   main {
-//     margin: 0 6px;
-//   }
+@media screen and (max-width: 375px) {
+  main {
+    margin: 0 6px;
+  }
 
-//   article {
-//     min-height: 500px;
-//   }
+  article {
+    min-height: 500px;
+  }
 
-//   .container {
-//     margin: 10px 20px;
-//     gap: 10px;
-//   }
+  .container {
+    margin: 10px 25px;
+    gap: 10px;
+  }
 
-//   .plan-info {
-//     display: flex;
-//     align-items: center;
-//     padding: 10px;
-//   }
-// }
+  .plan-info {
+    padding: 10px;
+  }
+}
