@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+*,
+::after,
+::backdrop {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white-paragraph: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white-heading: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: var(--very-dark-blue);
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+}
+
+main {
+  margin: 0 20px;
+}
+
+article {
+  max-width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--dark-desaturated-blue);
+}
+
+.content {
+  padding: 0 15px;
+
+  & > h1 {
+    font-size: 26px;
+    margin-top: 20px;
+  }
+
+  & > p {
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--slightly-transparent-white-paragraph);
+    padding: 20px 0;
+  }
+
+  & div {
+    margin: 25px 0;
+
+    & h1 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    & p {
+      font-size: 10px;
+      font-family: "Lexend Deca", sans-serif;
+      text-transform: uppercase;
+      color: var(--slightly-transparent-white-heading);
+    }
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  filter: sepia(0.4) opacity(0.45) saturate(6) hue-rotate(250deg);
+}
+
+figure {
+  background-color: var(--soft-violet);
+}
+
+span {
+  color: var(--soft-violet);
+}
+
+@media (min-width: 800px) {
+  article {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 900px;
+    text-align: start;
+  }
+
+  .content {
+    padding: 30px 60px;
+  }
+
+  img {
+    width: 50%;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+}
