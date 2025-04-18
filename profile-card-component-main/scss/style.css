@@ -1,0 +1,53 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+main {
+  margin-inline: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid red;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  min-height: 24rem;
+}
+
+.background {
+  flex: 1;
+  background-image: url("../images/bg-pattern-card.svg");
+}
+
+.profile {
+  margin: 40px 0;
+  position: relative;
+}
+.profile h1 {
+  margin-bottom: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  width: 100%;
+  border-top: 2px solid red;
+}
+.stats h1 {
+  margin-bottom: 5px;
+}

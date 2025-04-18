@@ -1,0 +1,57 @@
+@use "./utils/variables" as *;
+@use "./utils/reset" as *;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  //   font-family: ;
+  min-height: 100vh;
+}
+
+main {
+  margin-inline: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid red;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  min-height: 24rem;
+}
+
+.background {
+  flex: 1;
+  background-image: url("../images/bg-pattern-card.svg");
+}
+
+.profile {
+  margin: 40px 0;
+  position: relative;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  width: 100%;
+  border-top: 2px solid red;
+
+  h1 {
+    margin-bottom: 5px;
+  }
+}
+
+// img {
+//   border-radius: 50%;
+//   border: 2px solid white;
+//   position: absolute;
+// }
