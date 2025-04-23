@@ -1,0 +1,91 @@
+@use "utils/reset" as *;
+@use "utils/mixin" as *;
+@use "utils/variables" as *;
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+main {
+  margin-block: 48px;
+  margin-inline: 18px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+article {
+  max-width: 420px;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  section {
+    padding: 40px;
+
+    h1 {
+      text-transform: uppercase;
+      font-family: "Big Shoulders", sans-serif;
+      font-size: 34px;
+      font-weight: 500;
+      color: white;
+      margin: 25px 0;
+    }
+
+    p {
+      color: $transparent-white-paragraphs;
+      line-height: 1.6;
+      font-family: "Lexend Deca", sans-serif;
+      font-weight: 300;
+      text-wrap: pretty;
+      margin-bottom: 50px;
+    }
+
+    button {
+      border: none;
+      border-radius: 25px;
+      padding: 10px 30px;
+      margin-bottom: 10px;
+      font-weight: 600;
+
+      &:hover {
+        background-color: transparent;
+        color: $transparent-white-paragraphs;
+        outline: 2px solid $transparent-white-paragraphs;
+      }
+    }
+  }
+
+  .sedans {
+    background-color: $bright-orange;
+
+    button {
+      color: $bright-orange;
+    }
+  }
+
+  .suvs {
+    background-color: $dark-cyan;
+
+    button {
+      color: $dark-cyan;
+    }
+  }
+
+  .luxury {
+    background-color: $very-dark-cyan;
+
+    button {
+      color: $very-dark-cyan;
+    }
+  }
+}
+
+@media (min-width: 720px) {
+  article {
+    max-width: 960px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
