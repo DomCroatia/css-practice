@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+}
+
+main {
+  margin: 20px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.intro h1 {
+  font-size: 30px;
+  color: hsl(300, 43%, 22%);
+  margin: 0 50px;
+}
+.intro p {
+  color: hsl(303, 10%, 53%);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rating {
+  border-radius: 10px;
+  background-color: hsl(300, 24%, 96%);
+  padding: 10px 5px;
+}
+.rating span {
+  font-weight: 700;
+  color: hsl(300, 43%, 22%);
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review {
+  background-color: hsl(300, 43%, 22%);
+  color: hsl(300, 24%, 96%);
+  line-height: 1.2;
+  text-align: start;
+  text-wrap: pretty;
+  border-radius: 10px;
+  padding: 20px;
+}
+.review .profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.review .profile h2 {
+  font-size: 15px;
+}
+.review .profile span {
+  color: hsl(333, 80%, 67%);
+}
+.review .profile img {
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+@media (min-width: 840px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 250px 250px;
+    max-width: 960px;
+  }
+  .intro {
+    justify-content: center;
+    text-align: start;
+    max-width: 90%;
+  }
+  .intro h1 {
+    margin: 0;
+    font-size: 40px;
+    width: 70%;
+  }
+  .ratings {
+    justify-content: center;
+  }
+  .ratings .rating {
+    display: flex;
+    align-items: center;
+    max-width: 325px;
+  }
+  .ratings .rating span {
+    margin-left: 20px;
+  }
+  .ratings div:nth-child(2) {
+    align-self: center;
+  }
+  .ratings div:last-of-type {
+    align-self: flex-end;
+  }
+  .reviews {
+    flex-direction: row;
+    align-items: start;
+    grid-column: span 2;
+  }
+  .reviews div:nth-child(2) {
+    align-self: center;
+  }
+  .reviews div:last-of-type {
+    align-self: flex-end;
+  }
+}

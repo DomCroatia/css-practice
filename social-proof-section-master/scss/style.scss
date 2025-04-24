@@ -1,0 +1,142 @@
+@use "./utils/reset" as *;
+@use "./utils/variables" as *;
+@use "./utils/mixin" as *;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+}
+
+main {
+  margin: 20px;
+}
+
+article {
+  @include flexColumnGap;
+  max-width: 400px;
+}
+
+.intro {
+  @include flexColumnGap;
+
+  h1 {
+    font-size: 30px;
+    color: $very-dark-magenta;
+    margin: 0 50px;
+  }
+
+  p {
+    color: $dark-grayish-magenta;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+}
+
+.ratings {
+  @include flexColumnGap;
+}
+
+.rating {
+  border-radius: 10px;
+  background-color: $light-grayish-magenta;
+  padding: 10px 5px;
+
+  span {
+    font-weight: 700;
+    color: $very-dark-magenta;
+  }
+}
+
+.reviews {
+  @include flexColumnGap;
+}
+
+.review {
+  background-color: $very-dark-magenta;
+  color: $light-grayish-magenta;
+  line-height: 1.2;
+  text-align: start;
+  text-wrap: pretty;
+  border-radius: 10px;
+  padding: 20px;
+
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 15px;
+    }
+
+    span {
+      color: $soft-pink;
+    }
+    img {
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (min-width: 840px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 250px 250px;
+    max-width: 960px;
+  }
+
+  .intro {
+    justify-content: center;
+    text-align: start;
+    max-width: 90%;
+
+    h1 {
+      margin: 0;
+      font-size: 40px;
+      width: 70%;
+    }
+  }
+
+  .ratings {
+    justify-content: center;
+
+    .rating {
+      display: flex;
+      align-items: center;
+      max-width: 325px;
+
+      span {
+        margin-left: 20px;
+      }
+    }
+
+    div:nth-child(2) {
+      align-self: center;
+    }
+
+    div:last-of-type {
+      align-self: flex-end;
+    }
+  }
+
+  .reviews {
+    flex-direction: row;
+    align-items: start;
+    grid-column: span 2;
+
+    div:nth-child(2) {
+      align-self: center;
+    }
+
+    div:last-of-type {
+      align-self: flex-end;
+    }
+  }
+}
