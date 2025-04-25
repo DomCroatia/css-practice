@@ -1,0 +1,58 @@
+@use "./utils/variables" as *;
+@use "./utils/reset" as *;
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+main {
+  max-width: 600px;
+  margin-inline: 1rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro {
+  text-align: center;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 200;
+  }
+
+  h1:not(:first-child) {
+    font-weight: 600;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+
+  .child {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px -10px black;
+
+    img {
+      margin-left: auto;
+    }
+  }
+}
