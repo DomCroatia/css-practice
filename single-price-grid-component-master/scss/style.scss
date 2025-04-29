@@ -1,0 +1,47 @@
+@use "./utils/reset" as *;
+@use "./utils/variables" as *;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+}
+
+main {
+  // container-type: inline-size;
+  // flex-grow: 1;
+  display: flex;
+  margin-inline: 1rem;
+  border: 2px solid black;
+}
+
+article {
+  border: 2px solid red;
+}
+
+.join {
+}
+
+.pricing {
+  background-color: $cyan;
+}
+.why {
+  background-color: $fountain-blue;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+// @container (max-width: 400px) {
+//   section {
+//     font-weight: bold;
+//     color: red;
+//   }
+// }
