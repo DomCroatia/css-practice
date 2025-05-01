@@ -6,42 +6,110 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: $light-gray;
   font-family: "Karla", sans-serif;
   font-size: 16px;
+  line-height: 1.4;
 }
 
 main {
-  // container-type: inline-size;
-  // flex-grow: 1;
-  display: flex;
+  container-type: inline-size;
+  flex-grow: 1;
+  max-width: 640px;
   margin-inline: 1rem;
-  border: 2px solid black;
 }
 
 article {
-  border: 2px solid red;
-}
-
-.join {
-}
-
-.pricing {
-  background-color: $cyan;
-}
-.why {
-  background-color: $fountain-blue;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.2rem;
 }
 
-// @container (max-width: 400px) {
-//   section {
-//     font-weight: bold;
-//     color: red;
-//   }
-// }
+.join {
+  background-color: white;
+
+  h1 {
+    font-weight: 700;
+    color: $cyan;
+  }
+
+  p:first-of-type {
+    font-weight: 700;
+    color: $bright-yellow;
+  }
+
+  p:last-child {
+    color: $grayish-blue;
+  }
+}
+
+.pricing,
+.why {
+  color: $light-gray;
+}
+
+.pricing {
+  background-color: $cyan;
+
+  p {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    font-size: 32px;
+    font-weight: 700;
+    margin-right: 16px;
+  }
+
+  button {
+    max-width: 275px;
+    color: $light-gray;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: $bright-yellow;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px -5px black;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.why {
+  background-color: $fountain-blue;
+}
+
+@container (min-width: 600px) {
+  section {
+    gap: 0.5rem;
+    padding: 2rem;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .join {
+      grid-column: span 2;
+    }
+  }
+
+  .pricing {
+    span {
+      font-size: 24px;
+    }
+
+    p:last-of-type {
+      margin-bottom: 1.4rem;
+    }
+  }
+}
