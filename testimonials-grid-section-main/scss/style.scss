@@ -3,6 +3,9 @@
 @use "./utils/mixin" as *;
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 14px;
   font-family: "Barlow Semi Condensed", sans-serif;
   color: white;
@@ -12,10 +15,10 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
   margin-inline: 1rem;
+  grid-auto-flow: dense;
 
   article {
     padding: 1.4rem;
@@ -69,28 +72,17 @@ main {
   }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 1080px) {
   main {
-    gap: 1rem;
-
-    .first {
-      grid-column: span 2;
-      background-image: url("../images/bg-pattern-quotation.svg");
-      background-repeat: no-repeat;
-      background-position: 75% 0%;
-    }
-  }
-}
-
-@media (min-width: 1240px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 1200px;
+    margin-inline: 0.5rem;
   }
 
-  main {
-    grid-auto-flow: dense;
+  .first {
+    grid-column: span 2;
+    background-image: url("../images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: 75% 0%;
   }
 
   .third {
