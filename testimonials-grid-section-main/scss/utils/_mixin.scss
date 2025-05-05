@@ -1,0 +1,4 @@
+@mixin fontAndBgColor($color: white, $bgColor: black) {
+  color: $color;
+  background-color: $bgColor;
+}

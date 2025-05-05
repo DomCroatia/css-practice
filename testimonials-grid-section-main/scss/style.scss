@@ -1,16 +1,107 @@
 @use "./utils/reset" as *;
 @use "./utils/variables" as *;
+@use "./utils/mixin" as *;
 
 body {
-  font-size: 13px;
+  font-size: 14px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: white;
+  background-color: $grey-100;
+  min-height: 100vh;
 }
 
-article {
-  // padding: ;
-  // border-radius: ;
-  // box-shadow: ;
-  h1 {
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin-inline: 1rem;
+
+  article {
+    padding: 1.4rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px $grey-200;
+
+    h1 {
+      font-weight: 500;
+    }
   }
-  p {
+
+  .first {
+    background-color: $purple-500;
+  }
+
+  .second {
+    background-color: $grey-500;
+  }
+
+  .forth {
+    background-color: $dark-blue;
+  }
+
+  .third,
+  .fifth {
+    @include fontAndBgColor($color: $grey-500, $bgColor: white);
+
+    img {
+      border: 0;
+    }
+  }
+}
+
+.user {
+  display: flex;
+  gap: 1rem;
+
+  img {
+    border: 3px solid $purple-300;
+    border-radius: 50%;
+  }
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    span:first-of-type {
+      font-weight: 500;
+    }
+  }
+}
+
+@media (min-width: 720px) {
+  main {
+    gap: 1rem;
+
+    .first {
+      grid-column: span 2;
+      background-image: url("../images/bg-pattern-quotation.svg");
+      background-repeat: no-repeat;
+      background-position: 75% 0%;
+    }
+  }
+}
+
+@media (min-width: 1240px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    grid-auto-flow: dense;
+  }
+
+  .third {
+    grid-row: 2;
+  }
+
+  .forth {
+    grid-column: span 2;
+  }
+
+  .fifth {
+    grid-row: span 2;
   }
 }
