@@ -21,6 +21,9 @@ main {
   grid-auto-flow: dense;
 
   article {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     padding: 1.4rem;
     border-radius: 10px;
     box-shadow: 5px 5px 10px $grey-200;
@@ -72,28 +75,27 @@ main {
   }
 }
 
-@media (min-width: 1080px) {
-  main {
-    max-width: 1200px;
-    margin-inline: 0.5rem;
+@media (min-width: 500px) {
+  .first,
+  .forth,
+  .fifth {
+    grid-column: span 2;
   }
 
   .first {
-    grid-column: span 2;
     background-image: url("../images/bg-pattern-quotation.svg");
     background-repeat: no-repeat;
     background-position: 75% 0%;
   }
+}
 
-  .third {
-    grid-row: 2;
-  }
-
-  .forth {
-    grid-column: span 2;
+@media (min-width: 1080px) {
+  main {
+    max-width: 1200px;
   }
 
   .fifth {
-    grid-row: span 2;
+    grid-row: 1 / span 2;
+    grid-column: 4;
   }
 }
