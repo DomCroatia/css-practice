@@ -1,0 +1,131 @@
+@use "./utils/reset" as *;
+@use "./utils/variables" as *;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-image: url("../images/bg-intro-desktop.png");
+  background-color: $red;
+  color: white;
+}
+
+main {
+  max-width: 960px;
+  margin-inline: 1rem;
+}
+
+article {
+  display: flex;
+  gap: 2rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.info {
+  text-align: start;
+
+  h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+}
+
+.form {
+  gap: 1rem;
+
+  > p {
+    background-color: $blue;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: $white;
+  box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+
+  input {
+    padding: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 2px solid gainsboro;
+  }
+
+  input[type="submit"] {
+    background-color: $green;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $white;
+    border-radius: 10px;
+    border: 0;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+  }
+
+  span {
+    visibility: hidden;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: $red;
+  }
+
+  p {
+    font-size: 10px;
+    color: $grayish-blue;
+    margin-top: 1rem;
+  }
+
+  a {
+    color: $red;
+    text-decoration: none;
+  }
+}
+
+.visibilityVisible {
+  visibility: visible;
+}
+
+.warning {
+  background: white url("../images/icon-error.svg") no-repeat 95%;
+}
+
+@media (width < 550px) {
+  main {
+    margin-top: 4rem;
+  }
+  article {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+  }
+
+  .info {
+    text-align: center;
+
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+}
