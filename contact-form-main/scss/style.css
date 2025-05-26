@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Karla", sans-serif;
+  min-height: 100vh;
+  background-color: hsl(148, 38%, 91%);
+}
+
+main {
+  width: 640px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 0 1rem;
+}
+main h1 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form div,
+form fieldset {
+  display: flex;
+  gap: 0.25rem;
+}
+form > div:first-of-type,
+form fieldset {
+  gap: 1rem;
+}
+form > div:not(:first-of-type) {
+  flex-direction: column;
+}
+form fieldset {
+  border: none;
+}
+form fieldset legend {
+  margin-bottom: 0.25rem;
+}
+form fieldset label {
+  display: flex;
+  flex-grow: 1;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(118, 118, 118);
+  border-radius: 10px;
+}
+form textarea {
+  resize: vertical;
+}
+form span {
+  color: hsl(0, 66%, 54%);
+}
+form label:not(fieldset label)::after,
+form legend::after {
+  content: " *";
+}
+form input,
+form fieldset label,
+form textarea {
+  padding: 0.5rem;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 10px;
+}
+form input[type=submit] {
+  padding: 1rem;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(169, 82%, 27%);
+  border: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

@@ -1,0 +1,98 @@
+@use "./utils/_reset" as *;
+@use "./utils/_variables" as *;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Karla", sans-serif;
+  min-height: 100vh;
+  background-color: $green-200;
+}
+
+main {
+  width: 640px;
+  background-color: $white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 0 1rem;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  div,
+  fieldset {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  > div:first-of-type,
+  fieldset {
+    gap: 1rem;
+  }
+
+  > div:not(:first-of-type) {
+    flex-direction: column;
+  }
+
+  fieldset {
+    border: none;
+
+    legend {
+      margin-bottom: 0.25rem;
+    }
+
+    label {
+      display: flex;
+      flex-grow: 1;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgb(118, 118, 118);
+      border-radius: 10px;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  span {
+    color: $red;
+    // display: none;
+    // display: block;
+  }
+
+  label:not(fieldset label)::after,
+  legend::after {
+    content: " *";
+  }
+
+  input,
+  fieldset label,
+  textarea {
+    padding: 0.5rem;
+    border: 1px solid $grey-500;
+    border-radius: 10px;
+  }
+
+  input[type="submit"] {
+    padding: 1rem;
+    color: $white;
+    background-color: $green-600;
+    border: none;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
