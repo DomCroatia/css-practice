@@ -14,64 +14,69 @@
     <link rel="stylesheet" href="./scss/style.css" />
   </head>
   <body>
-    <!-- <p>Message Sent! Thanks for completing the form. We'll be in touch soon!</p> -->
+    <div class="confirmed">
+      <div>
+        <img src="./assets/images/icon-success-check.svg" alt="" />
+        <h1>Message Sent!</h1>
+      </div>
+      <span>Thanks for completing the form. We'll be in touch soon!</span>
+    </div>
     <main>
-      <h1>Contact Us</h1>
-      <form>
-        <div>
-          <div class="container">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" />
-            <span>This field is required</span>
-          </div>
-          <div class="container">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" />
-            <span>This field is required</span>
-          </div>
-        </div>
-
-        <div>
-          <label for="email">Email Address</label>
-          <input type="text" id="email" />
-          <span>Please enter a valid email address</span>
-        </div>
-
-        <div>
-          <fieldset>
-            <legend>Quert Type</legend>
-            <label for="general">
-              <input type="radio" name="queryType" id="general" />
-              General Enquiry</label
-            >
-            <label for="support">
-              <input type="radio" name="queryType" id="support" />
-              Support Request</label
-            >
-          </fieldset>
-          <span>Please select query type</span>
-        </div>
-
-        <div>
-          <label for="message">Message</label>
-          <textarea name="mesage" id="message"></textarea>
-          <span>This field is required</span>
-        </div>
-
-        <div>
+      <div>
+        <h1>Contact Us</h1>
+        <form>
           <div>
-            <input type="checkbox" id="consent" />
-            <label for="consent"
-              >I consent to being contacted by the team</label
+            <div class="container">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" />
+              <span>This field is required</span>
+            </div>
+            <div class="container">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" />
+              <span>This field is required</span>
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input type="text" id="email" />
+            <span>Please enter a valid email address</span>
+          </div>
+          <div>
+            <fieldset>
+              <legend>Query Type</legend>
+              <label for="general">
+                <input type="radio" name="queryType" id="general" />
+                General Enquiry</label
+              >
+              <label for="support">
+                <input type="radio" name="queryType" id="support" />
+                Support Request</label
+              >
+            </fieldset>
+            <span>Please select query type</span>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+            <span>This field is required</span>
+          </div>
+
+          <div>
+            <input type="checkbox" id="consent" name="consent" />
+            <label for="consent">
+              I consent to being contacted by the team</label
             >
           </div>
           <span>To submit this form, please consent to being contacted</span>
-        </div>
 
-        <input type="submit" value="Submit" />
-      </form>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     </main>
 
-    <!-- <script src=""></script> -->
+    <script src="./main.js"></script>
   </body>
 </html>

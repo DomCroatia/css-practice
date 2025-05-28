@@ -3,23 +3,52 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Karla", sans-serif;
+  accent-color: $green-600;
   min-height: 100vh;
   background-color: $green-200;
 }
 
 main {
-  width: 640px;
-  background-color: $white;
-  border-radius: 10px;
-  padding: 2rem;
-  margin: 0 1rem;
+  width: 100%;
+
+  > div {
+    width: min(32rem, calc(100% - 2rem));
+    background-color: $white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
 
   h1 {
     font-size: 24px;
     margin-bottom: 1rem;
+  }
+}
+
+.confirmed {
+  visibility: hidden;
+  max-width: 320px;
+  padding: 1rem;
+  border-radius: 10px;
+  color: $white;
+  background-color: $grey-900;
+  font-weight: 400;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+  span {
+    font-size: 0.7rem;
   }
 }
 
@@ -29,17 +58,13 @@ form {
   gap: 1rem;
 
   div,
-  fieldset {
+  fieldset,
+  label {
     display: flex;
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
 
-  > div:first-of-type,
-  fieldset {
-    gap: 1rem;
-  }
-
-  > div:not(:first-of-type) {
+  > div:not(:first-of-type):not(:last-of-type) {
     flex-direction: column;
   }
 
@@ -47,47 +72,66 @@ form {
     border: none;
 
     legend {
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
     }
 
-    label {
-      display: flex;
-      flex-grow: 1;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border: 1px solid rgb(118, 118, 118);
-      border-radius: 10px;
+    & label:has(input:checked) {
+      background-color: $green-200;
+    }
+  }
+
+  label {
+    flex-grow: 1;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 
   textarea {
-    resize: vertical;
+    resize: none;
+    height: 4rem;
   }
 
   span {
     color: $red;
-    // display: none;
+    font-size: 14px;
+    display: none;
     // display: block;
   }
 
   label:not(fieldset label)::after,
   legend::after {
+    color: $green-600;
     content: " *";
   }
 
-  input,
+  input[type="text"],
   fieldset label,
   textarea {
-    padding: 0.5rem;
-    border: 1px solid $grey-500;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: 1px solid $grey-500;
     border-radius: 10px;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      outline: 2px solid $green-600;
+    }
   }
 
   input[type="submit"] {
     padding: 1rem;
     color: $white;
+    border-radius: 10px;
     background-color: $green-600;
     border: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $grey-900;
+    }
   }
 }
 
@@ -95,4 +139,21 @@ form {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+@media (width <=480px) {
+  main {
+    max-width: 400px;
+  }
+
+  form {
+    div:first-of-type,
+    fieldset {
+      flex-direction: column;
+    }
+
+    textarea {
+      height: 8rem;
+    }
+  }
 }
