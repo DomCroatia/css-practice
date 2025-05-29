@@ -74,13 +74,13 @@ form fieldset {
 form fieldset legend {
   margin-bottom: 0.5rem;
 }
+form fieldset label {
+  flex-grow: 1;
+}
 form fieldset label:has(input:checked) {
   background-color: hsl(148, 38%, 91%);
 }
-form label {
-  flex-grow: 1;
-}
-form label:hover {
+form input:hover {
   cursor: pointer;
 }
 form textarea {
@@ -96,6 +96,9 @@ form label:not(fieldset label)::after,
 form legend::after {
   color: hsl(169, 82%, 27%);
   content: " *";
+}
+form label[for=consent]:hover {
+  cursor: pointer;
 }
 form input[type=text],
 form fieldset label,
@@ -120,9 +123,10 @@ form input[type=submit] {
   background-color: hsl(169, 82%, 27%);
   border: none;
 }
-form input[type=submit]:hover {
+form input[type=submit]:hover, form input[type=submit]:focus {
   cursor: pointer;
   background-color: hsl(187, 24%, 22%);
+  outline: 3px solid orange;
 }
 
 .container {

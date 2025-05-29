@@ -75,14 +75,16 @@ form {
       margin-bottom: 0.5rem;
     }
 
+    label {
+      flex-grow: 1;
+    }
+
     & label:has(input:checked) {
       background-color: $green-200;
     }
   }
 
-  label {
-    flex-grow: 1;
-
+  input {
     &:hover {
       cursor: pointer;
     }
@@ -97,13 +99,18 @@ form {
     color: $red;
     font-size: 14px;
     display: none;
-    // display: block;
   }
 
   label:not(fieldset label)::after,
   legend::after {
     color: $green-600;
     content: " *";
+  }
+
+  label[for="consent"] {
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   input[type="text"],
@@ -128,9 +135,11 @@ form {
     background-color: $green-600;
     border: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       cursor: pointer;
       background-color: $grey-900;
+      outline: 3px solid orange;
     }
   }
 }
