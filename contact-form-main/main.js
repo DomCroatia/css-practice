@@ -1,45 +1,52 @@
-console.log("Hello World!");
-
 const form = document.querySelector("form");
-const inputFields = document.querySelectorAll(
-  "input:not([type='submit']), textarea"
-);
+const textFields = document.querySelectorAll("input[type='text']");
+const textArea = document.querySelector("textarea");
+const queryInputs = document.querySelectorAll('input[type="radio"');
+const queryError = document.querySelector(".queryError");
+const consentInput = document.querySelector('input[type="checkbox"]');
+const consentError = document.querySelector(".consentError");
+// const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-function displayError() {}
+const textInputs = [...textFields, textArea];
 
-function checkForValue(input) {
-  const inputType = input.type;
+// function validateEmail(email) {
+//   return emailRegex.test(email);
+// }
+
+function checkForValue(inputField) {
+  const inputType = inputField.type;
+
   switch (inputType) {
-    case "text":
-      return Boolean(input.value);
     case "radio":
     case "checkbox":
-      return Boolean(input.checked);
+      return Boolean(inputField.checked);
     default:
-      return Boolean(input.value);
+      return Boolean(inputField.value);
   }
 }
-
-function validateEmail() {}
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  for (let input of inputFields) {
-    const value = checkForValue(input);
+  for (let textField of textInputs) {
+    const value = checkForValue(textField);
 
-    console.log(value);
+    if (!value) {
+      textField.nextElementSibling.style.display = "block";
+    } else {
+      textField.nextElementSibling.style.display = "none";
+    }
+  }
 
-    input.addEventListener("input", () => {
-      //   input.style.borderColor = "gainsboro";
-      //   input.classList.remove("warning");
-      //   input.nextElementSibling.classList.remove("visibilityVisible");
-    });
+  if (!queryInputs[0].checked && !queryInputs[1].checked) {
+    queryError.style.display = "block";
+  } else {
+    queryError.style.display = "none";
+  }
+
+  if (!consentInput.checked) {
+    consentError.style.display = "block";
+  } else {
+    consentError.style.display = "none";
   }
 });
-
-// 2. queryselector na sve elemente koji moraju biti ispunjeni
-// 2a. switch case ovisno o vrsti input fielda
-// 3. funkciju koja provjerava da li svaki element iz 2. ima value
-// 4. funkcija koja displaya span s errorom ako nema valuea
-// 5.

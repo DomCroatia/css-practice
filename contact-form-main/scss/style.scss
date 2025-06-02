@@ -64,12 +64,13 @@ form {
     gap: 0.5rem;
   }
 
-  > div:not(:first-of-type):not(:last-of-type) {
+  div:not(:first-of-type) {
     flex-direction: column;
   }
 
   fieldset {
     border: none;
+    flex-direction: column;
 
     legend {
       margin-bottom: 0.5rem;

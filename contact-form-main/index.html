@@ -43,9 +43,9 @@
             <input type="text" id="email" name="email" />
             <span>Please enter a valid email address</span>
           </div>
-          <div>
-            <fieldset>
-              <legend>Query Type</legend>
+          <fieldset>
+            <legend>Query Type</legend>
+            <div>
               <label for="general">
                 <input type="radio" name="queryType" id="general" value="ge" />
                 General Enquiry</label
@@ -54,9 +54,9 @@
                 <input type="radio" name="queryType" id="support" value="sr" />
                 Support Request</label
               >
-            </fieldset>
-            <span>Please select query type</span>
-          </div>
+            </div>
+            <span class="queryError">Please select query type</span>
+          </fieldset>
 
           <div>
             <label for="message">Message</label>
@@ -65,12 +65,16 @@
           </div>
 
           <div>
-            <input type="checkbox" id="consent" name="consent" />
-            <label for="consent">
-              I consent to being contacted by the team</label
+            <div>
+              <input type="checkbox" id="consent" name="consent" />
+              <label for="consent">
+                I consent to being contacted by the team</label
+              >
+            </div>
+            <span class="consentError"
+              >To submit this form, please consent to being contacted</span
             >
           </div>
-          <span>To submit this form, please consent to being contacted</span>
 
           <input type="submit" value="Submit" />
         </form>

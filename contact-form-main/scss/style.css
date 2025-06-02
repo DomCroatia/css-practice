@@ -65,11 +65,12 @@ form label {
   display: flex;
   gap: 0.5rem;
 }
-form > div:not(:first-of-type):not(:last-of-type) {
+form div:not(:first-of-type) {
   flex-direction: column;
 }
 form fieldset {
   border: none;
+  flex-direction: column;
 }
 form fieldset legend {
   margin-bottom: 0.5rem;
