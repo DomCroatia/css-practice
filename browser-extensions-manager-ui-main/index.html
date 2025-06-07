@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+    <link rel="stylesheet" href="./scss/style.css" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <header>
+          <img src="./assets/images/logo.svg" alt="Logo" />
+          <button class="theme">Light/Dark theme</button>
+        </header>
+        <section class="nav">
+          <h1>Extensions List</h1>
+          <ul>
+            <li>
+              <button class="all">All</button>
+            </li>
+            <li>
+              <button class="active">Active</button>
+            </li>
+            <li>
+              <button class="inactive">Inactive</button>
+            </li>
+          </ul>
+        </section>
+        <section class="ext-container">
+          <div class="extension">
+            <div class="card">
+              <div>
+                <img src="./assets/images/logo-devlens.svg" alt="" />
+                <div>
+                  <h1>test</h1>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+              <div>
+                <button>Remove</button>
+                <label for="extension">sexstension</label>
+                <input type="checkbox" name="extension" id="extension" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

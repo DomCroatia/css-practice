@@ -1,0 +1,59 @@
+@use "./utils/variables" as *;
+@use "./utils/reset" as *;
+
+// @layer ;
+// :root {}
+
+body {
+  justify-content: center;
+  //   align-items: center;
+  min-height: 100vh;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  //   color: ;
+  //   background-color: ;
+}
+
+main {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: 2rem;
+}
+
+body,
+article,
+header,
+.nav,
+ul {
+  display: flex;
+}
+
+article {
+  flex-direction: column;
+  gap: 1rem;
+
+  header {
+    border: 2px solid red;
+    justify-content: space-between;
+
+    .theme {
+      //   padding: 1rem;
+      //   background: url("../assets/images/icon-moon.svg") no-repeat center;
+    }
+  }
+  .nav {
+    border: 2px solid blue;
+    justify-content: space-between;
+  }
+
+  .ext-container {
+    display: grid;
+
+    // .card {
+    //   > div:first-of-type {
+    //     display: flex;
+    //     gap: 0.5rem;
+    //   }
+    // }
+  }
+}
