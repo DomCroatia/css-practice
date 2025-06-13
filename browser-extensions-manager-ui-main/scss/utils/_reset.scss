@@ -9,3 +9,19 @@
 ul {
   list-style: none;
 }
+
+button {
+  border: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  // &:focus {
+  //   outline: 2px solid red;
+  //   outline-offset: 2px;
+  // }
+}
