@@ -47,6 +47,7 @@ article header {
   justify-content: space-between;
   padding: 0.75rem;
   border-radius: 0.75rem;
+  box-shadow: 0 0 0 1px hsl(0, 0%, 78%);
   background-color: hsl(200, 60%, 99%);
 }
 article header button {
@@ -68,6 +69,7 @@ article .nav ul {
 }
 article .nav ul button {
   background-color: hsl(200, 60%, 99%);
+  box-shadow: 0 0 0 1px hsl(0, 0%, 78%);
 }
 article .ext-container {
   display: grid;
@@ -99,8 +101,9 @@ article .ext-container .card > div:last-of-type {
   align-items: center;
 }
 article .ext-container .card > div:last-of-type button {
+  font-weight: 600;
   background-color: hsl(200, 60%, 99%);
-  box-shadow: 0 0 0 1px hsl(226, 11%, 37%);
+  box-shadow: 0 0 0 1px hsl(0, 0%, 78%);
 }
 article .ext-container .card .switch-label {
   position: relative;
@@ -140,4 +143,8 @@ article .ext-container .card .switch-input:checked + .switch {
 }
 article .ext-container .card .switch-input:checked + .switch::before {
   transform: translateX(26px);
+}
+
+.hidden {
+  display: none;
 }

@@ -2,10 +2,8 @@
 @use "./utils/reset" as *;
 
 // theme, &:focus, &:hover
-// removeBtn - funkcionalnost
-// filter - funkcionalnost (+ promjeniti u radioBtn ??)
 // box-shadow: 0 0 0 1px $neutral-300; good?
-// poboljsat grid, ako je moguce (responsiveness
+// poboljsat grid, ako je moguce (responsiveness)
 
 body {
   display: flex;
@@ -34,7 +32,7 @@ article {
     justify-content: space-between;
     padding: 0.75rem;
     border-radius: 0.75rem;
-    // box-shadow: 0 0 0 1px $neutral-300; good?
+    box-shadow: 0 0 0 1px $neutral-300;
     background-color: $neutral-0; //theme
 
     button {
@@ -59,6 +57,7 @@ article {
 
       button {
         background-color: $neutral-0; // theme
+        box-shadow: 0 0 0 1px $neutral-300;
       }
     }
   }
@@ -95,8 +94,9 @@ article {
         align-items: center;
 
         button {
+          font-weight: 600;
           background-color: $neutral-0; // theme
-          box-shadow: 0 0 0 1px $neutral-600; // good??
+          box-shadow: 0 0 0 1px $neutral-300; // good??
         }
       }
 
@@ -146,4 +146,8 @@ article {
       }
     }
   }
+}
+
+.hidden {
+  display: none;
 }
