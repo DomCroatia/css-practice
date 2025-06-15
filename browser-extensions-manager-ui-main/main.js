@@ -4,7 +4,11 @@ const active = document.querySelector(".active");
 const inactive = document.querySelector(".inactive");
 const container = document.querySelector(".ext-container");
 
-// napraviti real-time filtriranje + fade-in-out transition
+// todo: real-time filter
+// isActiveCard : [] isInactiveCard : []
+// need IDs for this approach
+
+// todo: filter button active state
 
 all.addEventListener("click", () => {
   filterCards("all");
@@ -27,20 +31,20 @@ function filterCards(showActive) {
 
     switch (showActive) {
       case "all":
-        card.removeAttribute("style");
+        card.classList.remove("hidden");
         break;
       case "active":
         if (isActive) {
-          card.removeAttribute("style");
+          card.classList.remove("hidden");
         } else {
-          card.style.display = "none";
+          card.classList.add("hidden");
         }
         break;
       case "inactive":
         if (!isActive) {
-          card.removeAttribute("style");
+          card.classList.remove("hidden");
         } else {
-          card.style.display = "none";
+          card.classList.add("hidden");
         }
         break;
     }
@@ -68,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <input class="switch-input" type="checkbox" ${
                   ele.isActive ? "checked" : ""
                 }/>
-                <span class="switch"></span>
+                <span tabindex="0" class="switch"></span>
               </label>
             </div>
         `;
@@ -76,7 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const removeBtn = card.querySelector(".remove-button");
         removeBtn.addEventListener("click", () => {
-          card.remove();
+          card.classList.add("fade-out");
+
+          card.addEventListener(
+            "transitionend",
+            () => {
+              card.remove();
+            },
+            { once: true }
+          );
         });
       });
     });

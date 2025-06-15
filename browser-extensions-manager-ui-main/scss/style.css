@@ -37,6 +37,12 @@ main {
   margin-inline: 2rem;
 }
 
+button:focus,
+span:focus {
+  outline: 2px solid hsl(3, 71%, 56%);
+  outline-offset: 2px;
+}
+
 article {
   display: flex;
   flex-direction: column;
@@ -71,11 +77,17 @@ article .nav ul button {
   background-color: hsl(200, 60%, 99%);
   box-shadow: 0 0 0 1px hsl(0, 0%, 78%);
 }
+article .nav ul button .active {
+  background-color: hsl(3, 71%, 56%);
+}
 article .ext-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 200px;
   gap: 1rem;
+}
+article .ext-container div.hidden {
+  display: none;
 }
 article .ext-container .card {
   display: flex;
@@ -85,6 +97,10 @@ article .ext-container .card {
   border-radius: 1rem;
   background-color: hsl(200, 60%, 99%);
   box-shadow: 2px 2px 2px 0 hsl(217, 61%, 90%);
+  transition: opacity 0.3s;
+}
+article .ext-container .card.fade-out {
+  opacity: 0;
 }
 article .ext-container .card > div:first-of-type {
   display: flex;
@@ -104,6 +120,10 @@ article .ext-container .card > div:last-of-type button {
   font-weight: 600;
   background-color: hsl(200, 60%, 99%);
   box-shadow: 0 0 0 1px hsl(0, 0%, 78%);
+}
+article .ext-container .card > div:last-of-type button:hover {
+  background-color: hsl(3, 71%, 56%);
+  color: hsl(200, 60%, 99%);
 }
 article .ext-container .card .switch-label {
   position: relative;
@@ -143,8 +163,4 @@ article .ext-container .card .switch-input:checked + .switch {
 }
 article .ext-container .card .switch-input:checked + .switch::before {
   transform: translateX(26px);
-}
-
-.hidden {
-  display: none;
 }

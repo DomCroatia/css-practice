@@ -1,9 +1,12 @@
 @use "./utils/variables" as *;
 @use "./utils/reset" as *;
 
-// theme, &:focus, &:hover
+// theme
+// &:hover
+// filterBtns,  themeBtn, removeBtn, switches
 // box-shadow: 0 0 0 1px $neutral-300; good?
 // poboljsat grid, ako je moguce (responsiveness)
+// fix specificity za display
 
 body {
   display: flex;
@@ -20,6 +23,14 @@ main {
   width: 100%;
   max-width: 1080px;
   margin-inline: 2rem;
+}
+
+button,
+span {
+  &:focus {
+    outline: 2px solid $red-500;
+    outline-offset: 2px;
+  }
 }
 
 article {
@@ -58,6 +69,10 @@ article {
       button {
         background-color: $neutral-0; // theme
         box-shadow: 0 0 0 1px $neutral-300;
+
+        .active {
+          background-color: $red-500;
+        }
       }
     }
   }
@@ -68,6 +83,11 @@ article {
     grid-auto-rows: 200px; // popraviti na bolje
     gap: 1rem;
 
+    // fix specificity za display
+    div.hidden {
+      display: none;
+    }
+
     .card {
       display: flex;
       flex-direction: column;
@@ -76,6 +96,11 @@ article {
       border-radius: 1rem;
       background-color: $neutral-0; // theme
       box-shadow: 2px 2px 2px 0 $neutral-200; //theme
+      transition: opacity 0.3s;
+
+      &.fade-out {
+        opacity: 0;
+      }
 
       > div:first-of-type {
         display: flex;
@@ -97,6 +122,11 @@ article {
           font-weight: 600;
           background-color: $neutral-0; // theme
           box-shadow: 0 0 0 1px $neutral-300; // good??
+
+          &:hover {
+            background-color: $red-500;
+            color: $neutral-0; //theme
+          }
         }
       }
 
@@ -146,8 +176,4 @@ article {
       }
     }
   }
-}
-
-.hidden {
-  display: none;
 }
