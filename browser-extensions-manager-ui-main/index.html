@@ -25,13 +25,39 @@
           <h1>Extensions List</h1>
           <ul>
             <li>
-              <button class="all" type="button">All</button>
+              <input
+                type="radio"
+                name="filter"
+                id="filterChoice1"
+                value="all"
+                tabindex="-1"
+                checked
+              />
+              <label for="filterChoice1" class="all" tabindex="0"> All </label>
             </li>
             <li>
-              <button class="active" type="button">Active</button>
+              <input
+                type="radio"
+                name="filter"
+                id="filterChoice2"
+                value="active"
+                tabindex="-1"
+              />
+              <label for="filterChoice2" class="active" tabindex="0">
+                Active
+              </label>
             </li>
             <li>
-              <button class="inactive" type="button">Inactive</button>
+              <input
+                type="radio"
+                name="filter"
+                id="filterChoice3"
+                value="inactive"
+                tabindex="-1"
+              />
+              <label for="filterChoice3" class="inactive" tabindex="0">
+                Inactive
+              </label>
             </li>
           </ul>
         </section>

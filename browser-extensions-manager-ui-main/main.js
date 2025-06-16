@@ -4,11 +4,7 @@ const active = document.querySelector(".active");
 const inactive = document.querySelector(".inactive");
 const container = document.querySelector(".ext-container");
 
-// todo: real-time filter
-// isActiveCard : [] isInactiveCard : []
-// need IDs for this approach
-
-// todo: filter button active state
+// real time - add fade-out class
 
 all.addEventListener("click", () => {
   filterCards("all");
@@ -69,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div>
               <button type="button" class="remove-button">Remove</button>
               <label class="switch-label">
-                <input class="switch-input" type="checkbox" ${
+                <input class="switch-input" type="checkbox" tabindex="-1"${
                   ele.isActive ? "checked" : ""
                 }/>
                 <span tabindex="0" class="switch"></span>
@@ -81,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const removeBtn = card.querySelector(".remove-button");
         removeBtn.addEventListener("click", () => {
           card.classList.add("fade-out");
-
           card.addEventListener(
             "transitionend",
             () => {
@@ -89,6 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             { once: true }
           );
+        });
+
+        const label = card.querySelector("label");
+        label.addEventListener("change", () => {
+          const activeInput = document.getElementById("filterChoice2");
+          const inactiveInput = document.getElementById("filterChoice3");
+
+          if (activeInput.checked) {
+            filterCards("active");
+          } else if (inactiveInput.checked) {
+            filterCards("inactive");
+          }
         });
       });
     });
