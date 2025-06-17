@@ -1,20 +1,40 @@
-const theme = document.querySelector(".theme");
-const all = document.querySelector(".all");
-const active = document.querySelector(".active");
-const inactive = document.querySelector(".inactive");
-const container = document.querySelector(".ext-container");
+const themeBtn = document.querySelector(".theme");
+const allLabel = document.querySelector(".all");
+const activeLabel = document.querySelector(".active");
+const inactiveLabel = document.querySelector(".inactive");
 
 // real time - add fade-out class
 
-all.addEventListener("click", () => {
+themeBtn.addEventListener("click", () => {
+  document.querySelector("body").classList.toggle("dark-theme");
+
+  const logo = document.querySelector(".logo");
+  const logoDark = "./assets/images/logo-dark.svg";
+  const logoLight = "./assets/images/logo.svg";
+
+  const themeImg = document.querySelector(".theme-icon");
+  const themeImgSrc = themeImg.getAttribute("src");
+  const lightIcon = "./assets/images/icon-sun.svg";
+  const darkIcon = "./assets/images/icon-moon.svg";
+
+  if (themeImgSrc == lightIcon) {
+    themeImg.setAttribute("src", darkIcon);
+    logo.setAttribute("src", logoLight);
+  } else {
+    themeImg.setAttribute("src", lightIcon);
+    logo.setAttribute("src", logoDark);
+  }
+});
+
+allLabel.addEventListener("click", () => {
   filterCards("all");
 });
 
-active.addEventListener("click", () => {
+activeLabel.addEventListener("click", () => {
   filterCards("active");
 });
 
-inactive.addEventListener("click", () => {
+inactiveLabel.addEventListener("click", () => {
   filterCards("inactive");
 });
 
@@ -52,7 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((data) => {
       data.forEach((ele) => {
+        const container = document.querySelector(".ext-container");
         let card = document.createElement("div");
+
         card.classList.add("card");
         card.innerHTML = `
             <div>
@@ -92,9 +114,17 @@ document.addEventListener("DOMContentLoaded", () => {
           const inactiveInput = document.getElementById("filterChoice3");
 
           if (activeInput.checked) {
-            filterCards("active");
+            card.classList.add("fade-out");
+            setTimeout(() => {
+              filterCards("active");
+            }, 250);
+            card.classList.remove("fade-out");
           } else if (inactiveInput.checked) {
-            filterCards("inactive");
+            card.classList.add("fade-out");
+            setTimeout(() => {
+              filterCards("inactive");
+            }, 250);
+            card.classList.remove("fade-out");
           }
         });
       });

@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 *,
 ::before,
 ::after {
@@ -20,8 +22,8 @@ button {
     cursor: pointer;
   }
 
-  // &:focus {
-  //   outline: 2px solid red;
-  //   outline-offset: 2px;
-  // }
+  &:focus {
+    outline: 2px solid $red-500;
+    outline-offset: 2px;
+  }
 }

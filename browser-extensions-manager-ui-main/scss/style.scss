@@ -1,8 +1,6 @@
 @use "./utils/variables" as *;
 @use "./utils/reset" as *;
 
-// theme (background, extension img, color, box-shadow, :hover)
-
 body {
   display: flex;
   justify-content: center;
@@ -11,6 +9,11 @@ body {
   font-family: "Noto Sans";
   color: $neutral-900; // theme
   background-image: $light-gradient; // theme
+
+  &.dark-theme {
+    color: $neutral-100;
+    background-image: $dark-gradient;
+  }
 }
 
 main {
@@ -30,7 +33,7 @@ header {
   justify-content: space-between;
   padding: 0.75rem;
   border-radius: 0.75rem;
-  box-shadow: 2px 2px 2px 0 $neutral-200;
+  border: 2px solid $neutral-200; //theme
   background-color: $neutral-0; //theme
 
   button {
@@ -38,7 +41,7 @@ header {
     border-radius: 0.5rem;
 
     &:hover {
-      background-color: $neutral-300;
+      background-color: $neutral-300; //theme
     }
   }
 }
@@ -65,16 +68,17 @@ header {
       &:checked + label {
         color: $neutral-0; //theme
         background-color: $red-500; //theme
+        outline: 2px solid $red-500;
       }
     }
     label {
       background-color: $neutral-0; // theme
-      box-shadow: 2px 2px 2px 0 $neutral-200;
+      outline: 2px solid $neutral-200; //theme
       padding: 0.5rem 1rem;
       border-radius: 1.5rem;
 
       &:hover {
-        background-color: $neutral-300;
+        background-color: $neutral-300; //theme
         cursor: pointer;
       }
     }
@@ -95,7 +99,7 @@ header {
   padding: 0.75rem;
   border-radius: 1rem;
   background-color: $neutral-0; // theme
-  box-shadow: 2px 2px 2px 0 $neutral-200; //theme
+  border: 2px solid $neutral-200; //theme
   transition: opacity 0.3s;
 
   &.fade-out {
@@ -120,12 +124,17 @@ header {
 
     button {
       background-color: $neutral-0; // theme
-      box-shadow: 0 0 0 1px $neutral-300;
+      outline: 1px solid $neutral-300; //theme
 
       &:hover {
-        box-shadow: none;
-        background-color: $red-500;
+        background-color: $red-500; //theme
         color: $neutral-0; //theme
+        outline: none;
+      }
+
+      &:focus {
+        background-color: $neutral-100; //theme
+        outline: 2px solid $red-500; //theme
       }
     }
   }
@@ -146,7 +155,7 @@ header {
   .switch {
     position: absolute;
     cursor: pointer;
-    background-color: #ccc;
+    background-color: #ccc; //theme
     border-radius: 24px;
     top: 0;
     left: 0;
@@ -161,14 +170,14 @@ header {
       width: 20px;
       left: 2px;
       bottom: 2px;
-      background-color: white;
+      background-color: white; //theme
       border-radius: 50%;
       transition: 0.25s;
     }
   }
 
   .switch-input:checked + .switch {
-    background-color: $red-500;
+    background-color: $red-500; //theme
   }
 
   .switch-input:checked + .switch::before {
@@ -176,13 +185,11 @@ header {
   }
 }
 
-button,
 ul label,
 span {
   &:focus {
-    outline: 2px solid $red-500;
+    outline: 2px solid $red-500; //theme
     outline-offset: 2px;
-    box-shadow: none;
   }
 }
 
