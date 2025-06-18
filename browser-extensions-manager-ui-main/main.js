@@ -3,8 +3,6 @@ const allLabel = document.querySelector(".all");
 const activeLabel = document.querySelector(".active");
 const inactiveLabel = document.querySelector(".inactive");
 
-// real time - add fade-out class
-
 themeBtn.addEventListener("click", () => {
   document.querySelector("body").classList.toggle("dark-theme");
 
