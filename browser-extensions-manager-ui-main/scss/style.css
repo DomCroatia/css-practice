@@ -47,6 +47,7 @@ body.dark-theme header button:hover, body.dark-theme header button:focus {
 }
 body.dark-theme nav ul input:checked + label {
   color: hsl(226, 25%, 17%);
+  background-color: hsl(3, 71%, 56%);
 }
 body.dark-theme nav label {
   background-color: hsl(226, 25%, 17%);
@@ -78,6 +79,7 @@ body.dark-theme ul label:focus,
 body.dark-theme span:focus {
   outline: 2px solid hsl(3, 71%, 56%);
   outline-offset: 2px;
+  background-color: hsl(226, 11%, 37%);
 }
 
 main {

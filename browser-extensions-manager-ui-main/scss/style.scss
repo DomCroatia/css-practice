@@ -32,6 +32,7 @@ body {
       ul input {
         &:checked + label {
           color: $bg-dark;
+          background-color: $red-500;
         }
       }
 
@@ -75,6 +76,7 @@ body {
       &:focus {
         outline: 2px solid $red-500;
         outline-offset: 2px;
+        background-color: $focus-dark;
       }
     }
   }
