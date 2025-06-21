@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-block-start: 2rem;
+}
+
+main {
+  max-width: 1080px;
+  width: calc(100% - 2rem);
+  margin-inline: 1rem;
+}
+
+section {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  box-shadow: 0 0 5px 5px hsl(31, 66%, 93%);
+  border-radius: 1rem;
+}
+
+.card {
+  border-radius: 12px;
+}
+.card img {
+  width: 100%;
+}
+.card p {
+  font-size: 18px;
+}
