@@ -7,16 +7,24 @@
   padding: 0;
 }
 
+h1,
+h2,
+h3 {
+  line-height: 1;
+  font-weight: 600;
+}
+
 body {
   min-height: 100vh;
   font-family: "DM Sans", sans-serif;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   margin-block-start: 2rem;
 }
 
 main {
-  max-width: 1080px;
+  max-width: 1000px;
   width: calc(100% - 2rem);
   margin-inline: 1rem;
 }
@@ -24,17 +32,104 @@ main {
 section {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  box-shadow: 0 0 5px 5px hsl(31, 66%, 93%);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-rows: repeat(3, 250px);
   border-radius: 1rem;
+}
+section .subgrid {
+  grid-row: span 3;
+  display: grid;
+  gap: 1rem;
+}
+section .one {
+  justify-content: space-evenly;
+  background-color: hsl(31, 66%, 93%);
+}
+section .one span {
+  color: hsl(256, 67%, 59%);
+}
+section .two {
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(256, 67%, 59%);
+  grid-column: span 2;
+  text-align: center;
+  padding: 2rem;
+}
+section .two span {
+  color: hsl(39, 100%, 71%);
+}
+section .two p {
+  color: hsl(0, 0%, 100%);
+}
+section .two img {
+  margin-block-start: 1rem;
+  width: 45%;
+}
+section .three {
+  gap: 1rem;
+  grid-row: span 2;
+  background-color: hsl(254, 88%, 90%);
+}
+section .three img {
+  width: 170%;
+}
+section .four {
+  justify-content: space-between;
+  background-color: hsl(39, 100%, 71%);
+}
+section .five {
+  gap: 1rem;
+}
+section .five img {
+  width: 150%;
+}
+section .six {
+  gap: 2.5rem;
+  background-color: hsl(39, 100%, 71%);
+}
+section .seven {
+  gap: 1.2rem;
+}
+section .seven h1 {
+  color: hsl(0, 0%, 7%);
+}
+section .eight {
+  flex-direction: row;
+  align-items: center;
+  grid-column: span 2;
+  background-color: hsl(256, 67%, 59%);
+}
+section .eight h2 {
+  color: hsl(0, 0%, 100%);
+}
+section .eight img {
+  width: 50%;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   border-radius: 12px;
+  overflow: hidden;
+  padding: 1rem;
 }
 .card img {
   width: 100%;
 }
 .card p {
   font-size: 18px;
+}
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
 }

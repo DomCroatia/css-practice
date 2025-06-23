@@ -4,13 +4,14 @@
 body {
   min-height: 100vh;
   font-family: "DM Sans", sans-serif;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   margin-block-start: 2rem;
 }
 
 main {
-  max-width: 1080px;
+  max-width: 1000px;
   width: calc(100% - 2rem);
   margin-inline: 1rem;
 }
@@ -18,13 +19,102 @@ main {
 section {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  box-shadow: 0 0 5px 5px $yellow-100;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-rows: repeat(3, 250px);
   border-radius: 1rem;
+
+  .subgrid {
+    grid-row: span 3;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .one {
+    justify-content: space-evenly;
+    background-color: $yellow-100;
+
+    span {
+      color: $purple-500;
+    }
+  }
+
+  .two {
+    justify-content: center;
+    align-items: center;
+    background-color: $purple-500;
+    grid-column: span 2;
+    text-align: center;
+    padding: 2rem;
+
+    span {
+      color: $yellow-500;
+    }
+
+    p {
+      color: $white;
+    }
+
+    img {
+      margin-block-start: 1rem;
+      width: 45%;
+    }
+  }
+
+  .three {
+    gap: 1rem;
+    grid-row: span 2;
+    background-color: $purple-100;
+
+    img {
+      width: 170%;
+    }
+  }
+
+  .four {
+    justify-content: space-between;
+    background-color: $yellow-500;
+  }
+
+  .five {
+    gap: 1rem;
+    img {
+      width: 150%;
+    }
+  }
+
+  .six {
+    gap: 2.5rem;
+    background-color: $yellow-500;
+  }
+
+  .seven {
+    gap: 1.2rem;
+    h1 {
+      color: $black;
+    }
+  }
+
+  .eight {
+    flex-direction: row;
+    align-items: center;
+    grid-column: span 2;
+    background-color: $purple-500;
+
+    h2 {
+      color: $white;
+    }
+    img {
+      width: 50%;
+    }
+  }
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   border-radius: 12px;
+  overflow: hidden;
+  padding: 1rem;
 
   img {
     width: 100%;
@@ -32,4 +122,17 @@ section {
   p {
     font-size: $font-para;
   }
+}
+
+h1 {
+  color: $white;
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
 }
