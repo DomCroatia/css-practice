@@ -1,135 +1,218 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer reset {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  h1,
+  h2 {
+    font-weight: 600;
+    line-height: 0.9;
+    text-wrap: pretty;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+    line-height: 0.9;
+  }
+  p {
+    line-height: 1;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
 }
-
-h1,
-h2,
-h3 {
-  line-height: 1;
-  font-weight: 600;
+@layer base {
+  body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin-block-start: 2rem;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+  }
+  main {
+    max-width: 1080px;
+    width: calc(100% - 2rem);
+    margin-inline: 2rem;
+  }
 }
-
-body {
-  min-height: 100vh;
-  font-family: "DM Sans", sans-serif;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  margin-block-start: 2rem;
-}
-
-main {
-  max-width: 1000px;
-  width: calc(100% - 2rem);
-  margin-inline: 1rem;
-}
-
-section {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-template-rows: repeat(3, 250px);
-  border-radius: 1rem;
-}
-section .subgrid {
-  grid-row: span 3;
-  display: grid;
-  gap: 1rem;
-}
-section .one {
-  justify-content: space-evenly;
-  background-color: hsl(31, 66%, 93%);
-}
-section .one span {
-  color: hsl(256, 67%, 59%);
-}
-section .two {
-  justify-content: center;
-  align-items: center;
-  background-color: hsl(256, 67%, 59%);
-  grid-column: span 2;
-  text-align: center;
-  padding: 2rem;
-}
-section .two span {
-  color: hsl(39, 100%, 71%);
-}
-section .two p {
-  color: hsl(0, 0%, 100%);
-}
-section .two img {
-  margin-block-start: 1rem;
-  width: 45%;
-}
-section .three {
-  gap: 1rem;
-  grid-row: span 2;
-  background-color: hsl(254, 88%, 90%);
-}
-section .three img {
-  width: 170%;
-}
-section .four {
-  justify-content: space-between;
-  background-color: hsl(39, 100%, 71%);
-}
-section .five {
-  gap: 1rem;
-}
-section .five img {
-  width: 150%;
-}
-section .six {
-  gap: 2.5rem;
-  background-color: hsl(39, 100%, 71%);
-}
-section .seven {
-  gap: 1.2rem;
-}
-section .seven h1 {
-  color: hsl(0, 0%, 7%);
-}
-section .eight {
-  flex-direction: row;
-  align-items: center;
-  grid-column: span 2;
-  background-color: hsl(256, 67%, 59%);
-}
-section .eight h2 {
-  color: hsl(0, 0%, 100%);
-}
-section .eight img {
-  width: 50%;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 1rem;
-}
-.card img {
-  width: 100%;
-}
-.card p {
-  font-size: 18px;
-}
-
-h1 {
-  color: hsl(0, 0%, 100%);
-  font-size: 2.8rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-}
-
-h3 {
-  font-size: 1.6rem;
+@layer layout {
+  section {
+    display: grid;
+    gap: 1rem;
+    border-radius: 1rem;
+    grid-template-areas: "one" "two" "three" "four" "five" "six" "seven" "eight";
+  }
+  @media (width > 600px) {
+    section {
+      grid-template-areas: "one one" "six four" "seven four" "three eight" "five two";
+    }
+  }
+  @media (width > 960px) {
+    section {
+      grid-template-areas: "seven one one four" "seven two three four" "eight two three four" "eight six five five";
+    }
+  }
+  .card {
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .one {
+    grid-area: one;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: hsl(256, 67%, 59%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+  }
+  .one img {
+    max-width: 70%;
+  }
+  .one span {
+    color: hsl(39, 100%, 71%);
+  }
+  @media (width > 960px) {
+    .one img {
+      max-width: 40%;
+    }
+  }
+  .two {
+    grid-area: two;
+    justify-content: center;
+  }
+  @media (width > 960px) {
+    .two {
+      justify-content: space-evenly;
+    }
+    .two img {
+      max-width: 150%;
+    }
+  }
+  .three {
+    grid-area: three;
+    background-color: hsl(39, 100%, 71%);
+  }
+  .three img {
+    max-width: 60%;
+    margin-bottom: -30px;
+  }
+  @media (width > 960px) {
+    .three {
+      justify-content: center;
+    }
+    .three img {
+      max-width: 100%;
+      margin-bottom: -100px;
+    }
+  }
+  .four {
+    grid-area: four;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(254, 88%, 90%);
+    text-align: center;
+  }
+  @media (width > 960px) {
+    .four {
+      align-items: start;
+      text-align: start;
+    }
+    .four img {
+      max-width: 170%;
+    }
+  }
+  .five {
+    grid-area: five;
+    align-items: center;
+    background-color: hsl(256, 67%, 59%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 1rem;
+  }
+  .five img {
+    max-width: 90%;
+  }
+  @media (width > 960px) {
+    .five {
+      flex-direction: row;
+      text-align: start;
+      gap: 0.4rem;
+      padding: 1rem;
+    }
+    .five h2 {
+      font-size: 2.2rem;
+    }
+    .five img {
+      max-width: 50%;
+    }
+  }
+  .six {
+    grid-area: six;
+  }
+  .six img {
+    max-width: 65%;
+  }
+  @media (width > 960px) {
+    .six {
+      gap: 2rem;
+    }
+    .six img {
+      max-width: 70%;
+    }
+  }
+  .seven {
+    grid-area: seven;
+    background-color: hsl(31, 66%, 93%);
+    padding: 2rem;
+  }
+  .seven span {
+    color: hsl(256, 67%, 59%);
+  }
+  .seven img {
+    max-width: 65%;
+  }
+  @media (width > 960px) {
+    .seven {
+      justify-content: center;
+      padding: 1rem;
+    }
+    .seven img {
+      max-width: 80%;
+      margin-inline: auto;
+    }
+  }
+  .eight {
+    grid-area: eight;
+    background-color: hsl(39, 100%, 71%);
+  }
+  .eight img {
+    max-width: 65%;
+  }
+  @media (width > 960px) {
+    .eight {
+      justify-content: space-between;
+    }
+    .eight img {
+      max-width: 90%;
+      margin-inline: auto;
+    }
+  }
 }
